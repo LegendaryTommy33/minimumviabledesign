@@ -261,7 +261,7 @@
         </ul>
 
         <div class="form-wrapper">
-            <form action="#" method="POST">
+            <form action="#" method="POST" onsubmit="handleFormSubmit(event)">
                 <input type="email" name="email" placeholder="Ton email pour recevoir le guide PDF" required>
                 <button type="submit">Recevoir le guide maintenant</button>
             </form>
@@ -269,6 +269,30 @@
 
         <p class="footer-text">Ton email est utilisé uniquement pour t’envoyer le guide et quelques ressources utiles. Pas de spam, pas de partage.</p>
     </div>
+
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            const form = event.target;
+            const emailInput = form.querySelector('input[name="email"]');
+            const button = form.querySelector('button[type="submit"]');
+            const footer = document.querySelector('.footer-text');
+
+            if (!emailInput.value) return;
+
+            // Basic UX feedback
+            button.disabled = true;
+            button.textContent = 'Merci, vérifie ta boîte mail';
+
+            if (footer) {
+                footer.textContent = 'Merci ! Le guide arrive dans ta boîte mail dans quelques minutes.';
+            }
+
+            // HubSpot tracking script will still see this submit event
+            // and record the email via the Non-HubSpot forms feature.
+        }
+    </script>
 
     <!-- Start of HubSpot Embed Code -->
     <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/147781254.js"></script>
