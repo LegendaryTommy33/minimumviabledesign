@@ -74,7 +74,7 @@
             align-items: center;
         }
 
-        /* --- GLOSSY MEDICAL ICON --- */
+        /* --- LOGO WRAPPER --- */
         .icon-wrapper {
             width: 100px;
             height: 100px;
@@ -91,6 +91,13 @@
             border: 1px solid #333;
         }
 
+        /* Logo image inside the wrapper */
+        .logo-image {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+        }
+
         /* Inner glow of the icon */
         .icon-glow {
             position: absolute;
@@ -100,35 +107,6 @@
             filter: blur(8px);
         }
 
-        /* The Medical Cross */
-        .medical-cross {
-            position: relative;
-            width: 40px;
-            height: 40px;
-        }
-        
-        .medical-cross::before,
-        .medical-cross::after {
-            content: '';
-            position: absolute;
-            background: linear-gradient(to bottom, #ffece6, #ffbfb3); /* Warm light tone like original image */
-            border-radius: 4px;
-            box-shadow: 0 0 10px rgba(255, 180, 160, 0.5);
-        }
-
-        .medical-cross::before {
-            width: 12px;
-            height: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .medical-cross::after {
-            width: 40px;
-            height: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
 
         /* --- TYPOGRAPHY --- */
         h1 {
@@ -156,6 +134,19 @@
             max-width: 580px;
             margin: 0 auto 40px auto;
             font-weight: 400;
+        }
+
+        /* --- BENEFITS LIST --- */
+        .benefits-list {
+            text-align: left;
+            max-width: 580px;
+            margin: -20px auto 32px auto;
+            padding-left: 18px;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #d4d4d8;
+            list-style: disc;
         }
 
         /* --- SUBSCRIPTION FORM --- */
@@ -252,27 +243,36 @@
     <div class="stars"></div>
     <div class="horizon-glow"></div>
 
-    <div class="container">
-        <div class="icon-wrapper">
-            <div class="icon-glow"></div>
-            <div class="medical-cross"></div>
-        </div>
+        <div class="container">
+            <div class="icon-wrapper">
+                <img src="Logo/medical-services_17626688.png" alt="Guide Cabinet Médical Maroc" class="logo-image">
+            </div>
 
-        <h1>Lance ton cabinet médical au Maroc en moins de 3 mois.</h1>
+        <h1>Ouvre ton cabinet médical rentable au Maroc en 3 mois, même si tu pars de zéro.</h1>
 
         <p class="subheader">
-            Un guide étape par étape pour naviguer le financement, les régulations, le marketing autour du lancement d'un cabinet au Maroc.
+            Découvre le plan concret pour financer, légaliser et remplir ton cabinet sans te perdre dans l’administratif. Un guide actionnable avec checklists, modèles de dossiers et exemples de communication pour tes premiers patients.
         </p>
 
+        <ul class="benefits-list">
+            <li>Clarifie ton budget, ton statut juridique et les autorisations indispensables.</li>
+            <li>Évite les erreurs administratives qui peuvent te faire perdre des mois.</li>
+            <li>Attire tes premiers patients avec une stratégie marketing simple et adaptée au Maroc.</li>
+        </ul>
+
         <div class="form-wrapper">
-            <form action="#" method="POST" onsubmit="event.preventDefault();">
-                <input type="email" placeholder="Votre adresse email" required>
-                <button type="submit">Obtiens ton guide gratuit</button>
+            <form action="#" method="POST">
+                <input type="email" name="email" placeholder="Ton email pour recevoir le guide PDF" required>
+                <button type="submit">Recevoir le guide maintenant</button>
             </form>
         </div>
 
-        <p class="footer-text">Inscris-toi pour l'accès anticipé. Pas de spam.</p>
+        <p class="footer-text">Ton email est utilisé uniquement pour t’envoyer le guide et quelques ressources utiles. Pas de spam, pas de partage.</p>
     </div>
+
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/147781254.js"></script>
+    <!-- End of HubSpot Embed Code -->
 
 </body>
 </html>
