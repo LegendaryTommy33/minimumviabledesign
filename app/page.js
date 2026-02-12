@@ -24,7 +24,7 @@ export default function HomePage() {
       <div className="container">
         <div className="icon-wrapper">
           <img
-            src="/Logo/medical-services_17626688.png"
+            src="https://raw.githubusercontent.com/LegendaryTommy33/minimumviabledesign/main/Logo/medical-services_17626688.png"
             alt="Guide Cabinet Médical Maroc"
             className="logo-image"
           />
