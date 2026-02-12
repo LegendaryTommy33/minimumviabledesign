@@ -1,0 +1,219 @@
+/* --- RESET & BASE STYLES --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #050505; /* Deep black/dark grey */
+  color: #ffffff;
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* --- BACKGROUND EFFECTS --- */
+
+/* The starry background texture */
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(white, rgba(255, 255, 255, 0.2) 2px, transparent 3px),
+    radial-gradient(white, rgba(255, 255, 255, 0.15) 1px, transparent 2px),
+    radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 3px);
+  background-size: 550px 550px, 350px 350px, 250px 250px;
+  background-position: 0 0, 40px 60px, 130px 270px;
+  opacity: 0.3;
+  z-index: -2;
+}
+
+/* The Horizon Glow at the bottom */
+.horizon-glow {
+  position: absolute;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
+  height: 300px;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* --- MAIN CONTAINER --- */
+.container {
+  text-align: center;
+  max-width: 800px;
+  padding: 20px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- LOGO WRAPPER --- */
+.icon-wrapper {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(180deg, #2a2a2a 0%, #111111 100%);
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+  position: relative;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.8),
+    /* Drop shadow */ inset 0 1px 1px rgba(255, 255, 255, 0.2); /* Top highlight */
+  border: 1px solid #333;
+}
+
+/* Logo image inside the wrapper */
+.logo-image {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+}
+
+/* Inner glow of the icon */
+.icon-glow {
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(255, 150, 150, 0.4) 0%, transparent 70%);
+  filter: blur(8px);
+}
+
+/* --- TYPOGRAPHY --- */
+h1 {
+  font-family: "Inter", sans-serif;
+  font-size: 60px;
+  font-weight: 500; /* Medium weight looks cleaner */
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+p.subheader {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #a1a1aa; /* Muted grey text */
+  max-width: 580px;
+  margin: 0 auto 40px auto;
+  font-weight: 400;
+}
+
+/* --- BENEFITS LIST --- */
+.benefits-list {
+  text-align: left;
+  max-width: 580px;
+  margin: -20px auto 32px auto;
+  padding-left: 18px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #d4d4d8;
+  list-style: disc;
+}
+
+/* --- SUBSCRIPTION FORM --- */
+.form-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+input[type="email"] {
+  width: 100%;
+  padding: 16px 16px;
+  /* Padding right accommodates the button width */
+  padding-right: 170px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  background-color: #ffffff;
+  color: #000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+input[type="email"]::placeholder {
+  color: #999;
+}
+
+button {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  bottom: 4px;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 0 20px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #333;
+}
+
+/* --- FOOTER --- */
+.footer-text {
+  margin-top: 24px;
+  font-size: 12px;
+  color: #52525b;
+}
+
+/* --- MOBILE OPTIMIZATION --- */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 36px; /* Scaled down from 60px for mobile readability */
+    padding: 0 10px;
+  }
+
+  p.subheader {
+    font-size: 15px;
+    padding: 0 15px;
+  }
+
+  .form-wrapper {
+    max-width: 90%;
+  }
+
+  /* On very small screens, stack the button below the input */
+  @media (max-width: 400px) {
+    input[type="email"] {
+      padding-right: 16px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    button {
+      position: static;
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+    }
+  }
+}
+
