@@ -184,6 +184,212 @@ button:hover {
   color: #52525b;
 }
 
+/* --- SALES PAGE --- */
+.sales-hero {
+  max-width: 860px;
+  margin: 40px auto 32px;
+  padding: 24px 20px;
+  text-align: left;
+}
+
+.sales-label {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #a1a1aa;
+  margin-bottom: 12px;
+}
+
+.sales-title {
+  font-family: "Inter", sans-serif;
+  font-size: 42px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.sales-subtitle {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #d4d4d8;
+  max-width: 640px;
+}
+
+.sales-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.sales-cta-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #000000;
+  font-weight: 500;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background 0.15s ease, transform 0.1s ease;
+  white-space: nowrap;
+}
+
+.sales-cta-primary:hover {
+  background: #e4e4e7;
+  transform: translateY(-1px);
+}
+
+.sales-cta-full {
+  width: 100%;
+  margin-top: 16px;
+}
+
+.sales-cta-note {
+  font-size: 12px;
+  color: #a1a1aa;
+}
+
+.sales-trust {
+  margin-top: 16px;
+  font-size: 13px;
+  color: #a1a1aa;
+}
+
+.sales-section {
+  max-width: 980px;
+  margin: 16px auto;
+  padding: 24px 20px;
+}
+
+.sales-section-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.7fr);
+  gap: 28px;
+  align-items: flex-start;
+}
+
+.sales-section-title {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.sales-section-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #d4d4d8;
+}
+
+.sales-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.sales-feature-card {
+  background: rgba(15, 15, 15, 0.9);
+  border-radius: 16px;
+  border: 1px solid #27272a;
+  padding: 16px 14px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #e4e4e7;
+}
+
+.sales-feature-card h3 {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.sales-highlight {
+  background: radial-gradient(circle at top left, rgba(39, 39, 42, 0.8), transparent 60%);
+}
+
+.sales-two-column {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 12px;
+}
+
+.sales-bullets {
+  list-style: disc;
+  padding-left: 18px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #e4e4e7;
+}
+
+.sales-bullets-muted {
+  color: #a1a1aa;
+}
+
+.sales-pricing {
+  border-top: 1px solid #27272a;
+}
+
+.sales-pricing-intro {
+  margin-bottom: 20px;
+}
+
+.sales-pricing-card {
+  margin-top: 8px;
+  border-radius: 20px;
+  border: 1px solid #3f3f46;
+  padding: 20px 18px;
+  background: radial-gradient(circle at top, rgba(63, 63, 70, 0.6), rgba(15, 15, 15, 0.95));
+}
+
+.sales-pricing-label {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #a1a1aa;
+  margin-bottom: 4px;
+}
+
+.sales-pricing-price {
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.sales-pricing-note {
+  font-size: 12px;
+  color: #a1a1aa;
+  margin-left: 4px;
+}
+
+.sales-small {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #a1a1aa;
+}
+
+.sales-faq-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 12px;
+}
+
+.sales-faq-item {
+  border-radius: 16px;
+  border: 1px solid #27272a;
+  padding: 14px 12px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #d4d4d8;
+}
+
+.sales-faq-item h3 {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
 /* --- MOBILE OPTIMIZATION --- */
 @media (max-width: 768px) {
   h1 {
@@ -214,6 +420,42 @@ button:hover {
       padding: 12px;
       margin-top: 8px;
     }
+  }
+}
+
+@media (max-width: 900px) {
+  .sales-hero {
+    margin-top: 80px;
+    text-align: left;
+  }
+
+  .sales-title {
+    font-size: 30px;
+  }
+
+  .sales-section,
+  .sales-section-grid {
+    padding-inline: 16px;
+  }
+
+  .sales-section-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sales-feature-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sales-two-column {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sales-faq-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sales-cta-row {
+    align-items: flex-start;
   }
 }
 

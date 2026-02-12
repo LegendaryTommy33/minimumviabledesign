@@ -14,6 +14,11 @@ export default function HomePage() {
     if (!emailInput?.value) return;
 
     setSubmitted(true);
+
+    // Small delay to let tracking scripts capture the event, then redirect to sales page
+    setTimeout(() => {
+      window.location.href = "/sales";
+    }, 800);
   }
 
   return (
