@@ -184,6 +184,102 @@ button:hover {
   color: #52525b;
 }
 
+/* --- THANK YOU PAGE --- */
+.thanks-container {
+  text-align: center;
+  max-width: 600px;
+  padding: 40px 20px;
+  z-index: 1;
+  animation: thanks-fade-in 0.8s ease-out;
+  margin: 0 auto;
+}
+
+@keyframes thanks-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.thanks-check-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(180deg, #2a2a2a 0%, #111111 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 30px auto;
+  border: 1px solid #333;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  color: #ffbfb3;
+  font-size: 40px;
+}
+
+.thanks-title {
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+}
+
+.thanks-highlight-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.thanks-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #a1a1aa;
+  margin-bottom: 24px;
+}
+
+.thanks-social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.thanks-social-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.thanks-social-links a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.thanks-contact-email {
+  font-size: 14px;
+  color: #71717a;
+}
+
+.thanks-contact-email a {
+  color: #ffbfb3;
+  text-decoration: none;
+}
+
+.thanks-contact-email a:hover {
+  text-decoration: underline;
+}
+
 /* --- SALES PAGE --- */
 .sales-hero {
   max-width: 860px;
@@ -395,6 +491,10 @@ button:hover {
   h1 {
     font-size: 36px; /* Scaled down from 60px for mobile readability */
     padding: 0 10px;
+  }
+
+  .thanks-title {
+    font-size: 32px;
   }
 
   p.subheader {
