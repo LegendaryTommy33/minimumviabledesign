@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masterclass : Cabinet Médical Maroc</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #050505;
+            --card-bg: #0c0c0c;
+            --accent: #ffffff;
+            --secondary: #888888;
+            --border: rgba(255, 255, 255, 0.1);
+            --grid: rgba(255, 255, 255, 0.02);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: #ffffff; line-height: 1.5; overflow-x: hidden; scroll-behavior: smooth; }
+
+        .grid-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+            background-size: 40px 40px; z-index: -1;
+            mask-image: radial-gradient(circle at center, black, transparent 80%);
+        }
+
+        nav { position: sticky; top: 0; width: 100%; padding: 20px 0; background: rgba(5, 5, 5, 0.8); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); z-index: 100; }
+        .nav-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 24px; }
+
+        .hero { padding: 80px 24px 100px; max-width: 1200px; margin: 0 auto; }
+        .hero-flex { display: flex; align-items: center; justify-content: space-between; gap: 60px; }
+        .hero-text { flex: 1.2; text-align: left; }
+        .hero-visual { flex: 0.8; perspective: 1200px; display: flex; justify-content: center; }
+
+        .badge { background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border); padding: 8px 16px; border-radius: 100px; font-size: 12px; color: #fff; display: inline-block; margin-bottom: 24px; font-weight: 500; }
+        h1 { font-size: clamp(40px, 5vw, 68px); font-weight: 800; letter-spacing: -0.06em; line-height: 1.1; margin-bottom: 24px; background: linear-gradient(to bottom, #fff, #777); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 19px; color: var(--secondary); margin-bottom: 40px; max-width: 550px; }
+
+        .ebook-mockup { 
+            width: 100%; max-width: 360px; border-radius: 4px 12px 12px 4px;
+            box-shadow: -15px 25px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 255, 255, 0.05);
+            transform: rotateY(-18deg) rotateX(5deg) rotateZ(-2deg);
+            transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .hero-visual:hover .ebook-mockup { transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1.03); box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 60px rgba(255, 255, 255, 0.15); }
+
+        .section-container { max-width: 1200px; margin: 0 auto 100px; padding: 0 24px; }
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 24px; padding: 32px; display: flex; flex-direction: column; height: 100%; transition: 0.3s; }
+        .card:hover { border-color: rgba(255,255,255,0.3); transform: translateY(-5px); }
+        .card-img-container { width: 100%; height: 180px; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
+        .card-img { width: 100%; height: 100%; object-fit: cover; }
+
+        .whop-section { padding: 60px 24px 100px; text-align: center; }
+        .price-card {
+            background: rgba(12, 12, 12, 0.8); backdrop-filter: blur(20px);
+            display: inline-block; padding: 60px 40px; border-radius: 32px;
+            position: relative; max-width: 480px; width: 100%; border: 1px solid var(--border); overflow: hidden;
+        }
+        .price-card::before {
+            content: ""; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: conic-gradient(transparent, transparent, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: rotate-beam 6s linear infinite; z-index: -1;
+        }
+        @keyframes rotate-beam { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+        .btn { padding: 16px 32px; border-radius: 12px; font-weight: 700; text-decoration: none; display: inline-block; transition: 0.2s; border: none; font-size: 16px; cursor: pointer; }
+        .btn-primary { background: #fff; color: #000; width: 100%; }
+
+        @media (max-width: 900px) { .hero-flex { flex-direction: column; text-align: center; } .features-grid { grid-template-columns: 1fr; } .ebook-mockup { max-width: 280px; transform: none; } }
+    </style>
+</head>
+<body>
+    <div class="grid-bg"></div>
+    <nav><div class="nav-content"><div style="font-weight: 800; font-size: 20px;">MEDMAROC</div></div></nav>
+
+    <section class="hero">
+        <div class="hero-flex">
+            <div class="hero-text">
+                <div class="badge">Mise à jour : <span id="current-date"></span></div>
+                <h1>Installez votre <br> cabinet sereinement.</h1>
+                <p>Le guide stratégique complet pour maîtriser l'administratif, le financement et votre patientèle au Maroc.</p>
+                <a href="#buy" class="btn btn-primary" style="width: auto; padding-inline: 48px;">Démarrer mon installation</a>
+            </div>
+            <div class="hero-visual">
+                <img src="https://images.unsplash.com/photo-1544640808-32ca72ac7f37?w=800" alt="E-book Cover" class="ebook-mockup">
+            </div>
+        </div>
+    </section>
+
+    <div class="section-container">
+        <div class="features-grid">
+            <div class="card">
+                <div class="card-img-container"><img class="card-img" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600" alt="Finance"></div>
+                <h3>Financement</h3>
+                <p>Construisez un business plan bancable pour sécuriser vos fonds et vos investissements.</p>
+            </div>
+            <div class="card">
+                <div class="card-img-container"><img class="card-img" src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=600" alt="Legal"></div>
+                <h3>Conformité</h3>
+                <p>Le parcours exact entre le SGG et l'Ordre National pour éviter les retards.</p>
+            </div>
+            <div class="card">
+                <div class="card-img-container"><img class="card-img" src="https://images.unsplash.com/photo-1516549655169-df83a0774514?w=600" alt="Lancement"></div>
+                <h3>Patientèle</h3>
+                <p>Stratégies de visibilité éthiques pour remplir votre agenda dès la première semaine.</p>
+            </div>
+        </div>
+    </div>
+
+    <section id="buy" class="whop-section">
+        <div class="price-card">
+            <div style="font-size: 11px; font-weight: 700; opacity: 0.6; letter-spacing: 2px; margin-bottom: 20px;">ACCÈS COMPLET</div>
+            <div style="font-size: 64px; font-weight: 800; margin-bottom: 20px;">299 DHS</div>
+            <a href="https://whop.com/ghali-touimi-benjelloun/e-book-a4-a62c" class="btn btn-primary">Obtenir mon exemplaire</a>
+        </div>
+    </section>
+
+    <script>
+        const months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+        const d = new Date();
+        document.getElementById("current-date").innerHTML = months[d.getMonth()] + " " + d.getFullYear();
+    </script>
+</body>
+</html>
